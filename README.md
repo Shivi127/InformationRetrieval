@@ -4,24 +4,24 @@ CS:590R
 This code is used to Build an Inverted Index on the Shakspeare Corpus. 
 To load the file and make a simple inverted index call the functions in the following order
 
-# Load the JSON
+## Load the JSON
 loadJSON()
-# Loading Vocab
+## Loading Vocab
 getvocab()
-# DumpDocID
+## DumpDocID
 dumpDocumetID()
-# Create Stats
+## Create Stats
 term_stats = createstats()
-# CreateUncompressed
+## CreateUncompressed
 createUncompressed()
-# Write Compressed
+## Write Compressed
 writeUncompressed()
-# Write Compressed Lookup
+## Write Compressed Lookup
 dumpUnCompressedLookup()
-# Compressed Dic - delta + vbyte encoding
+## Compressed Dic - delta + vbyte encoding
 deltaencodePositionsandDocuments()
-# Write Compressed Lookup
+## Write Compressed Lookup
 writeCompressedIndex()
-# Dump Lookup
+## Dump Lookup
 dumpCompressedLookup()
 print("Checking Vocabulary:", compareVocab())
