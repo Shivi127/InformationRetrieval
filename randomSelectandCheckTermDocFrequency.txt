@@ -1,0 +1,900 @@
+feverous  3  3
+rain  47  59
+malcolm  12  53
+peerless  5  5
+lock  42  49
+session  6  6
+westminster  12  15
+
+
+exhale  3  4
+unlucky  5  5
+pull  27  29
+lightest  1  1
+errant  2  2
+might  289  480
+sawest  3  5
+
+
+met  109  138
+althaea  1  2
+youngl  2  2
+angelo  18  169
+spin  2  3
+suborn  8  10
+super  1  1
+
+
+bequeath  14  17
+riband  2  2
+crete  3  4
+defect  12  13
+reverend  44  58
+tyrian  1  1
+thereabouts  3  3
+
+
+fang  7  17
+perdurable  2  2
+cleanse  3  3
+due  54  71
+crib  1  1
+prerogative  8  8
+defy  29  32
+
+
+devoted  5  6
+admiral  4  5
+fourteen  16  22
+quondam  5  5
+sodden  3  3
+tails  1  1
+anguish  6  6
+
+
+griffin  1  1
+january  1  1
+unsubstantial  1  1
+lowly  14  15
+rein  11  12
+parishioner  1  1
+shew  1  1
+
+
+land  123  220
+bedford  11  46
+isidore  1  1
+presence  77  106
+supp  4  5
+thunder  61  85
+saint  88  131
+
+
+indignation  11  11
+fearful  75  94
+unless  116  148
+ethiopia  1  1
+dukedom  16  29
+eminence  5  5
+defective  4  4
+
+
+ascension  2  2
+damask  4  4
+yield  134  186
+gavest  11  14
+plank  1  1
+uncrown  1  1
+woodman  2  2
+
+
+hob  2  2
+flowing  6  6
+owe  91  109
+damp  1  1
+antiate  2  3
+preservation  5  5
+twelve  41  48
+
+
+townsmen  1  1
+enrobe  1  1
+carcass  7  7
+interpreter  6  8
+politician  4  4
+considered  4  5
+patient  86  105
+
+
+condole  3  4
+companionship  1  1
+beaumont  1  1
+gobbet  1  1
+strengthen  13  13
+canary  5  6
+stung  4  5
+
+
+vaporous  1  1
+enthrall  4  4
+nun  7  7
+belgia  1  1
+tangle  5  5
+lea  2  2
+property  18  18
+
+
+sincerity  5  5
+groom  17  30
+volumes  3  3
+fennel  1  1
+odds  32  41
+hurry  4  4
+lid  6  6
+
+
+hurt  62  106
+motion  66  74
+proceeding  22  24
+convey  41  47
+ix  5  5
+imputation  6  6
+creeps  4  4
+
+
+dolour  9  9
+stitch  1  1
+mingle  25  27
+watery  16  17
+guiltless  17  19
+thievery  2  2
+tom  11  29
+
+
+woman  206  409
+lethargy  6  6
+seizure  2  2
+englishmen  4  5
+bristle  5  5
+hoy  1  1
+physics  1  1
+
+
+teem  5  5
+glasses  7  8
+rob  42  50
+imitation  3  3
+slid  1  1
+bought  46  52
+gratulate  3  3
+
+
+chameleon  3  3
+dismount  3  3
+stable  8  10
+coop  1  1
+bolingbroke  26  175
+eyes  307  639
+vii  23  23
+
+
+reverence  42  46
+restore  29  34
+veriest  2  2
+overflow  3  3
+unparallel  2  2
+manage  24  25
+nut  7  9
+
+
+harbour  21  24
+approacheth  3  3
+blossom  16  17
+bruit  6  6
+urine  2  2
+conceit  36  43
+rancorous  4  4
+
+
+osier  2  2
+lark  19  24
+sullen  15  16
+jaw  1  1
+every  293  522
+formerly  5  5
+business  155  239
+
+
+erleap  2  2
+denote  5  5
+strengthless  1  1
+trinket  1  1
+erboard  2  2
+commonly  3  3
+ovid  2  2
+
+
+stood  76  94
+forgotten  13  13
+lapwing  3  3
+nativity  11  12
+swill  1  1
+logic  1  1
+sensible  24  24
+
+
+dizzy  3  3
+cowardly  15  16
+couplet  1  1
+incline  17  17
+filch  3  4
+withheld  3  3
+bellyful  1  1
+
+
+pitch  27  34
+virginity  10  27
+commencement  1  1
+impale  1  1
+upturned  1  1
+mole  11  11
+degenerate  10  10
+
+
+grapple  10  10
+abergavenny  1  8
+clothes  31  40
+await  1  2
+unlaid  1  1
+churchman  6  6
+vernon  8  38
+
+
+levity  5  5
+paddle  2  2
+dialogue  6  6
+tennis  5  5
+clay  11  14
+favourable  4  5
+mockers  1  1
+
+
+lafeu  9  103
+destroyer  1  1
+kersey  2  2
+shrunk  7  7
+cony  6  6
+thousandth  1  1
+sparkle  8  9
+
+
+capel  1  1
+spake  43  52
+harbinger  4  4
+bonny  6  6
+speeding  3  3
+flush  3  3
+frail  15  18
+
+
+testy  6  6
+kerchief  2  2
+macduff  12  97
+oh  14  25
+volume  9  10
+mess  13  13
+edward  58  401
+
+
+ertake  6  6
+peak  2  2
+bed  203  337
+raze  13  13
+lack  91  128
+godhead  3  3
+supplie  1  1
+
+
+strict  18  20
+hard  143  187
+faith  221  421
+loveth  2  2
+trod  13  13
+maugre  2  2
+leash  2  2
+
+
+attend  162  207
+disclose  10  11
+crib  1  1
+cloy  10  10
+desolate  16  17
+terror  33  34
+joyful  30  33
+
+
+void  12  12
+nimble  27  29
+bide  17  19
+apple  13  15
+francisco  4  15
+artist  2  2
+cassandra  3  9
+
+
+visage  36  37
+province  3  3
+performer  2  2
+stafford  9  20
+misconstrue  5  5
+volumnia  7  66
+travell  6  6
+
+
+timorous  5  6
+closed  8  8
+vanity  22  26
+untender  2  2
+faithfully  10  10
+chapless  1  1
+church  47  73
+
+
+atomy  3  3
+ho  122  213
+motley  4  9
+meal  18  18
+wretch  61  67
+altogether  19  22
+provinces  5  5
+
+
+ban  8  10
+whosoe  1  1
+pomegranate  1  1
+trench  8  10
+publish  12  12
+stool  16  20
+colour  72  87
+
+
+hole  31  40
+jury  2  2
+thence  62  78
+inclination  11  11
+march  88  159
+crust  4  4
+cloth  18  19
+
+
+minx  2  2
+r  16  20
+tittle  1  1
+seditious  1  1
+distaste  2  3
+nightly  16  19
+bachelor  17  20
+
+
+buckler  8  8
+issue  101  128
+vaudemont  1  1
+pence  13  16
+beaufort  8  12
+poke  1  1
+soldier  196  477
+
+
+supply  35  37
+delabreth  1  1
+papers  9  13
+ovid  2  2
+journey  27  30
+green  75  113
+denier  1  1
+
+
+dieu  5  9
+nook  4  4
+bloody  148  234
+impose  12  13
+defect  12  13
+malvolio  7  119
+juliet  23  195
+
+
+temper  49  50
+intelligence  25  27
+stately  10  10
+possess  54  61
+special  34  35
+bead  13  13
+howl  13  18
+
+
+hang  175  285
+salerio  1  10
+verity  10  10
+robustious  1  1
+wreakful  1  1
+non  11  13
+ambition  39  48
+
+
+snore  5  7
+score  27  36
+thinkest  14  14
+indirect  15  16
+combine  11  12
+prompt  19  21
+majesty  120  273
+
+
+unroll  1  1
+imminent  6  6
+pastime  14  14
+retire  48  59
+elm  2  2
+bestride  9  9
+courtly  6  6
+
+
+ld  63  84
+safe  102  127
+attainder  3  3
+brittany  3  3
+horror  15  18
+wend  2  2
+privacy  1  1
+
+
+mount  52  60
+plummet  2  2
+shag  1  1
+tidings  43  50
+mischief  43  49
+iterate  2  2
+dream  98  183
+
+
+comprehend  3  3
+dram  15  15
+night  348  841
+surrey  6  44
+alias  1  2
+brabbler  1  1
+mischievous  1  1
+
+
+defuse  1  1
+strato  1  1
+sleep  179  351
+art  347  872
+fresh  76  87
+wrong  196  365
+gondola  1  1
+
+
+hull  3  3
+macduff  12  97
+shine  53  70
+lieu  7  7
+dwelling  11  11
+maim  8  8
+fact  11  11
+
+
+note  135  175
+feverous  3  3
+enroll  5  7
+kine  2  2
+vie  4  5
+irregular  2  2
+francisco  4  15
+
+
+cedar  9  11
+methought  34  48
+mattock  1  3
+maggot  2  2
+urn  3  3
+detest  29  33
+empty  54  62
+
+
+deplore  1  1
+amplify  2  2
+unfeigned  4  5
+latter  17  17
+charm  42  61
+scandalous  1  1
+outstretch  2  2
+
+
+shriek  16  16
+foil  15  20
+aspire  13  13
+prescription  5  5
+ero  6  32
+cytherea  1  1
+unbated  2  2
+
+
+deputy  18  24
+squeeze  2  2
+russet  2  2
+vigilant  2  2
+settle  3  3
+multitudinous  1  1
+abuse  77  102
+
+
+minority  3  3
+antiochu  4  27
+sponge  1  3
+dissentious  3  3
+beaumont  1  1
+watches  3  3
+marchioness  2  3
+
+
+messina  5  9
+spilt  5  5
+pristine  1  1
+travels  6  6
+ever  319  615
+spectator  3  3
+meritorious  2  2
+
+
+rumor  1  1
+inventor  1  2
+violate  10  11
+peise  1  1
+epilogue  1  1
+coinage  1  1
+priesthood  1  1
+
+
+closed  8  8
+epilogue  1  1
+forgave  1  1
+remission  3  3
+consumption  3  3
+minded  16  16
+crave  62  73
+
+
+magnificoe  1  1
+flock  19  22
+chariot  10  11
+bud  21  25
+caphi  1  6
+shut  53  65
+turret  1  2
+
+
+crisp  3  3
+nuptial  16  19
+vicious  9  9
+cerberus  3  3
+custom  41  47
+splits  1  1
+desist  3  3
+
+
+realm  43  59
+troilu  21  242
+daring  14  14
+erroneous  1  1
+testimony  14  15
+loaden  6  6
+king  352  3123
+
+
+strawberry  2  3
+cambria  1  1
+hungry  25  25
+leonati  1  1
+hog  5  8
+verdure  1  1
+induction  2  2
+
+
+protestation  7  7
+skilless  2  2
+lazy  9  11
+rugby  3  29
+candied  2  2
+yerk  1  1
+rib  17  19
+
+
+suit  110  178
+turn  273  422
+garment  48  66
+promiseth  2  2
+disadvantage  1  1
+touch  138  178
+mend  56  71
+
+
+gobbet  1  1
+casket  10  21
+brag  26  27
+raven  22  26
+meanwhile  3  3
+springe  1  1
+amain  11  13
+
+
+burst  25  29
+habit  45  54
+vie  4  5
+bonds  17  20
+cackle  1  1
+service  165  253
+sand  9  11
+
+
+repentance  7  7
+shake  94  116
+lysander  5  94
+vapour  6  7
+appele  1  1
+rosencrantz  9  74
+therewith  2  2
+
+
+dissuade  6  6
+fatal  35  42
+marvellous  23  23
+nothing  300  622
+steps  23  27
+bone  74  92
+aloud  25  26
+
+
+flier  2  3
+imperious  13  13
+forehand  2  2
+prophets  2  2
+stakes  2  2
+pody  1  1
+phrynia  1  6
+
+
+meantime  20  23
+naturally  2  2
+comfort  144  221
+pindaru  1  5
+swore  37  50
+whit  18  19
+viands  6  6
+
+
+menecrate  1  1
+vengeful  1  1
+antoniu  6  9
+scruple  20  26
+proceedings  16  16
+candied  2  2
+forehead  22  23
+
+
+gown  32  61
+furnish  38  40
+slander  50  73
+harrow  2  2
+several  64  80
+merciless  5  5
+staggers  3  3
+
+
+highness  93  188
+eglamour  3  17
+paunch  3  3
+beginner  1  1
+parcel  20  21
+nephew  26  36
+carouse  8  9
+
+
+stately  10  10
+cell  22  39
+aemiliu  2  10
+hyperion  5  5
+caliver  1  2
+wearisome  2  2
+sap  10  10
+
+
+journal  1  1
+renowned  29  33
+troyan  2  3
+juniu  1  1
+sparta  2  3
+scot  12  24
+malcontent  1  1
+
+
+unreal  1  1
+ducat  23  56
+kindle  15  15
+tedious  43  51
+eane  1  1
+discomfit  4  4
+hooded  1  1
+
+
+provided  30  31
+neptune  20  20
+spangle  2  2
+marian  4  4
+grope  1  1
+sooth  36  44
+patient  86  105
+
+
+rim  1  1
+volsce  12  33
+predecessor  4  4
+explicate  1  1
+spaniard  6  6
+hereafter  46  47
+boast  33  36
+
+
+dice  9  10
+reinforcement  1  1
+lovell  5  22
+moth  8  103
+rewards  10  10
+passionate  7  7
+indeed  251  438
+
+
+hobgoblin  1  2
+belzebub  1  1
+half  149  241
+apoplexy  2  3
+fire  180  289
+meditation  8  9
+chambermaid  1  1
+
+
+fife  10  12
+kennel  5  5
+relapse  1  1
+evermore  21  22
+shameless  6  6
+fleece  8  9
+frozen  9  10
+
+
+surrender  4  4
+blown  36  39
+disobedient  3  3
+wide  49  54
+damask  4  4
+haberdasher  1  3
+provocation  1  1
+
+
+swing  6  8
+swerve  6  6
+tradesmen  1  1
+digs  1  1
+unknown  39  42
+stall  5  5
+ice  17  17
+
+
+contrariety  1  1
+pilgrim  4  12
+swoon  18  20
+chastise  9  9
+whelp  12  13
+ample  17  19
+springe  1  1
+
+
+coarse  1  1
+marcheth  2  2
+relique  1  1
+sequel  9  9
+calumniate  1  1
+diana  23  78
+lag  5  5
+
+
+discase  1  1
+carthage  3  6
+solu  4  4
+sitting  25  28
+executioner  9  13
+juniu  1  1
+baboon  5  5
+
+
+censure  35  39
+tag  1  1
+embark  7  7
+represent  2  2
+forgave  1  1
+may  524  1629
+nutmeg  2  2
+
+
+infernal  2  2
+costs  1  1
+isbel  1  2
+unbind  1  1
+chancellor  5  5
+inquisition  1  1
+tumult  6  6
+
+
+warkworth  1  1
+prest  1  1
+dwelt  1  1
+syrup  1  1
+steal  87  107
+fee  36  39
+howsoe  5  5
+
+
+gyve  1  1
+dew  40  46
+sightless  2  2
+falchion  3  3
+mock  100  159
+manner  59  81
+plume  11  11
+
+
+trance  2  2
+unbury  1  1
+growth  11  12
+likelihood  16  16
+provost  10  94
+ulcerous  2  2
+scrivener  1  2
+
+
+misery  51  59
+scoff  5  6
+dislike  18  19
+room  137  143
+resemblance  2  2
+aloft  13  17
+hate  136  215
+
+
+lieutenantry  1  1
+cipher  3  3
+birthright  4  4
+fix  23  25
+cantle  1  1
+liefest  1  1
+thews  1  1
+
+
+rt  32  42
+couple  23  27
+diffuse  1  1
+brass  13  14
+bondman  6  9
+valentinu  1  1
+pictures  5  5
+
+
+compass  37  41
+error  28  36
+  747  2473
+flax  4  4
+tongue  259  483
+question  122  166
+se  4  4
+
+

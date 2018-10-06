@@ -6,8 +6,12 @@ import random
 # Loading Stopwords
 stop_words = set(stopwords.words('english'))
 
-vocab = [] 
-
+vocab = []  
+# Dictionary storing the
+# key: term
+# Value : [#document, position of word in text]
+termdic ={}
+termstats = {}
 # Dictionary that maps docID to a Scene Name
 docdic = {}
 term_position_dic = {}
@@ -39,21 +43,16 @@ def createUncompressed():
             t.extend(v[2])
             temparray.extend(t)
         uncompressed_dic[k] = temparray
-termstats = {}
+
 def createstats():
-    
     for k, value in term_position_dic.items():
         total_occurances = 0
         for v in value:
             total_occurances+= v[1]
         termstats[k] = {'#ofdocumnetsInCollection': len(value) ,'#ofoccurancesInCollection' : total_occurances}
-    return termstats
-
+        
 def loadJSON():
-    # Dictionary storing the
-    # key: term
-    # Value : [#document, position of word in text]
-    termdic ={}
+    
     with open("/Users/shivangisingh/Desktop/shakespeare-scenes.json",'r') as f:
         data = json.loads(f.read())
 
@@ -208,6 +207,7 @@ def dumpCompressedLookup():
 def getvocab():
     for k in term_position_dic.keys():
         vocab.append(k)
+getvocab()
 
 
 def bytes_to_int(bytes):
@@ -225,11 +225,11 @@ def compareVocab():
 # Load the JSON
 loadJSON()
 # Loading Vocab
-getvocab()
+vocab()
 # DumpDocID
 dumpDocumetID()
 # Create Stats
-term_stats = createstats()
+createstats()
 # CreateUncompressed
 createUncompressed()
 # Write Compressed
@@ -245,8 +245,10 @@ dumpCompressedLookup()
 print("Checking Vocabulary:", compareVocab())
 
 
-############################# EVALUATION ######################################
 
+
+
+############### EVALUATION #####################
 def sevenrandomwords():
     random_index= set()
     for i in range(7):
@@ -286,11 +288,15 @@ def readCLookUpIntoMemory():
 
 # flag = True = using the Uncompressed file
 # False = Using the Compressed File
-def dicecoffeicient(t1,t2, flag, breader,UClookup):
+def dicecoffeicient(t1,t2, flag, breader):
+    
+#     TO OPTIMIZE WE CAN PASS BREADER instead of a flag
+#         Get term list for t1 and t2
     if flag == True:
 #         Read Uncompressed
+# Make a breader for the Uncompressed 
         
-#         UClookup = readUCLookUpIntoMemory()
+        UClookup = readUCLookUpIntoMemory()
         
         t1offset = UClookup[t1]['offset']
         t1size = UClookup[t1]['size']
@@ -307,7 +313,7 @@ def dicecoffeicient(t1,t2, flag, breader,UClookup):
     
     else:
         
-#         UClookup = readUCLookUpIntoMemory()
+        UClookup = readUCLookUpIntoMemory()
         breader = open("/Users/shivangisingh/Desktop/InformationRetrieval/CIndex.txt",'rb')
 #         But we have to have decoding logic in here which I havent though of right now
         
@@ -325,84 +331,33 @@ def dicecoffeicient(t1,t2, flag, breader,UClookup):
         return (float(len(tab)/(len(ta)+len(tb))))
 
 
-# Pass in the offset, size to read and filereader
-def read_from_disk(byteoffset, bsize, breader):
-#     3 of the numbers together make a number
-    
-    breader.seek(byteoffset)
-    m = breader.read(bsize)
-    array = []
-    while len(m)>0:
-        character = m[:3]
-        array.append(bytes_to_int(character))
-        m=m[3:]
-        
-    return(array)
+# ######################### DICE's Coefficient 
+dicecompressed_fresult = []
+randomwordsused =[]
+
+# Generating
 breader = open("/Users/shivangisingh/Desktop/InformationRetrieval/CIndex.txt",'rb')
-def readCompresssssssss(byteoffset, bsize, breader):
-    breader.seek(byteoffset)
-    m = breader.read(bsize)
-#     print(m)
-    array = DecodeByteArray(m)
-    return array
+fresult =[]
+for i in range(100):
+    randomterms = sevenrandomwords()
+    randomwordsused.append(randomterms)
+#     randomterms=['wand','venice']
+    result =[]
+    print(randomterms,i)
+    for randomterm in randomterms:
+        print("RandomTerm is", randomterm)
+        maxcoeff = -1
+        maxterm = ""
+#         find dice coefficient between the term and the vocab
+        for v in vocab:
 
+            if v != randomterm:
+                dvalue = dicecoffeicient(randomterm,v, False,breader)
+                if(dvalue > maxcoeff):
+                    maxcoeff = dvalue
+                    maxterm = v
+        print("Maxterm",maxterm)
+        result.extend([randomterm,maxterm])
+    fresult.append([result])
 
-# output a file of (term #ofdocumentswiththatterm termfrequency) on each line and a blank line between each run
-# Stored the 7*100 list of words have to use this now Array of Arrays
-seven_hundredtimes = []
-def randomSelectandCheckTermDocFrequency():
-    f = open("/Users/shivangisingh/Desktop/InformationRetrieval/randomSelectandCheckTermDocFrequency.txt", "a")
-    t = open("/Users/shivangisingh/Desktop/InformationRetrieval/SevenHundredTerms.txt", "a")
-    for i in range(100):
-        seven = sevenrandomwords()
-        seven_hundredtimes.append(seven)
-        for s in seven:
-            t.write(s +" ")
-            line = ""
-            docnum = term_stats[s]['#ofdocumnetsInCollection']
-            termnum = term_stats[s]['#ofoccurancesInCollection']
-            line = s+"  "+ str(docnum) +"  "+ str(termnum) 
-            f.write(line)
-            f.write('\n')
-        t.write('\n')
-        f.write('\n')
-        f.write('\n')
-    f.close()
-
-randomSelectandCheckTermDocFrequency()
-
-
-# Function performs Dices Coefficient and stores 14 words in each line
-def dicewords():
-    # Generating
-    breader = open("/Users/shivangisingh/Desktop/InformationRetrieval/CIndex.txt",'rb')
-    fresult =[]
-    UClookup = readCLookUpIntoMemory()
-    d = open("/Users/shivangisingh/Desktop/InformationRetrieval/Dicewords.txt", "a")
-    i=1
-    for iteration in seven_hundredtimes:
-        for term in iteration:
-
-            result =[]
-    #         CHECK FROM HERE
-    #         Find Dices Coefficient Max one and write to a file?
-            maxcoeff = -1
-            maxterm = ""
-    #         find dice coefficient between the term and the vocab
-            for v in vocab:
-                if v != term:
-                    dvalue = dicecoffeicient(term,v, False,breader, UClookup)
-                    if(dvalue > maxcoeff):
-                        maxcoeff = dvalue
-                        maxterm = v
-            d.write(term + " " + maxterm+" ")
-            print("Term ", term, " Maxterm ",maxterm)
-    #         result.extend([term,maxterm])
-        print("iteration",i)
-        i+=1
-        d.write('\n')
-    #     fresult.append(result)
-
-
-dicewords()
-
+print ("Length",len(fresult))
