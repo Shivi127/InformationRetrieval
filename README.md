@@ -25,3 +25,8 @@ writeCompressedIndex()
 ## Dump Lookup
 dumpCompressedLookup()
 print("Checking Vocabulary:", compareVocab())
+
+
+# Evaluation Questions
+This function generates 7 random words and finds its term and document frequency for 100 iterations and writes it to a file
+randomSelectandCheckTermDocFrequency()
