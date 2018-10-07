@@ -2,6 +2,7 @@ import pandas as pd
 import json
 from nltk.corpus import stopwords
 import random
+import operator
 
 # Loading Stopwords
 stop_words = set(stopwords.words('english'))
@@ -10,10 +11,12 @@ vocab = []
 
 # Dictionary that maps docID to a Scene Name
 docdic = {}
+playDic ={}
 term_position_dic = {}
 uncompressed_dic = {}
 UncompressedLookup = {}
 CompressedLookup = {}
+
 
 def encode(term_array):
     prev = 0
@@ -49,20 +52,38 @@ def createstats():
         termstats[k] = {'#ofdocumnetsInCollection': len(value) ,'#ofoccurancesInCollection' : total_occurances}
     return termstats
 
+
+
 def loadJSON():
     # Dictionary storing the
     # key: term
     # Value : [#document, position of word in text]
     termdic ={}
+    
+    #     For finding the average number of words in a scene
+    totalnumberofscenes = 0
+    currenttotal =0
+    shortestscenelength = 99999999
+    shortestscenename = ""
+    curr_scene = ""
+    
     with open("/Users/shivangisingh/Desktop/shakespeare-scenes.json",'r') as f:
         data = json.loads(f.read())
-
+    
         doc_count= 1
+    play = ""
     for obj in data['corpus']:
         for k,v in obj.items():    
     #   Parsing SceneID 
             if k== 'sceneId':
-        #       Then add it to the dic and this is a new posting?
+                curr_scene = v
+                playindex = curr_scene.find(":")
+                play = curr_scene[:playindex]
+#                 print(play)
+                if play not in playDic:
+                    playDic[play] = 0
+                
+                totalnumberofscenes +=1
                 if v not in docdic:
                     docdic[doc_count]= v.strip()
                     doc_count+=1
@@ -71,7 +92,15 @@ def loadJSON():
         #           Tokenizing Text
                 text = v.split(" ")
         #           Removing StopWords
-                text = [word.strip() for word in text if word not in stop_words if len(word)!=None]
+                text = [word.strip() for word in text if word not in stop_words if len(word)!=None if word != " "]
+                currenttotal += len(text)
+                playDic[play] += len(text)
+                if(shortestscenelength>len(text)):
+                    shortestscenelength = len(text)
+                    shortestscenename = curr_scene
+#                     print("Updated", shortestscenename,shortestscenelength)
+                
+                
                 term_pos = 1
                 for term in text:
         #                 term_pos+=1
@@ -80,6 +109,10 @@ def loadJSON():
                     else :
                         termdic[term].append([doc_count-1,term_pos])
                     term_pos+=1
+                    
+    print("Average number of Wordsper scene",currenttotal/totalnumberofscenes)
+    print("Smallest Scene", shortestscenename )
+#     print("PlayDic",playDic)
 
     for key, value in termdic.items():
     #     value = List of lists where 1st entry is a documentID and the second is a position
@@ -128,9 +161,13 @@ def dumpUnCompressedLookup():
     f.write(docdump)
     f.close()
     
-# Functions Used in Delta Encoding
-K=128
-        
+
+# Function that deltaencodes and does vbyte compression for the lists
+
+# from random import randint
+
+K = 128
+
 def EncodeNum(n):
     nn =n
     b = bytearray()
@@ -159,8 +196,6 @@ def DecodeByteArray(bytearr):
             nums.append(n)
             n = 0
     return nums
-
-# Function that deltaencodes and does vbyte compression for the lists
 
 def deltaencodePositionsandDocuments():
     i=0
@@ -220,8 +255,10 @@ def compareVocab():
     return(set(CompressedLookup.keys()) == set(UncompressedLookup.keys()))
 
 
-
-
+def longestPlay():
+    print("Max word Play",max(playDic.items(), key=operator.itemgetter(1))[0])
+def shortestPlay():
+    print("Min Word Play",min(playDic.items(), key=operator.itemgetter(1))[0])
 # Load the JSON
 loadJSON()
 # Loading Vocab
@@ -242,11 +279,12 @@ deltaencodePositionsandDocuments()
 writeCompressedIndex()
 # Dump Lookup
 dumpCompressedLookup()
+longestPlay()
+shortestPlay()
 print("Checking Vocabulary:", compareVocab())
 
 
-############################# EVALUATION ######################################
-
+################################# Evaluation #############################################
 def sevenrandomwords():
     random_index= set()
     for i in range(7):
@@ -338,6 +376,7 @@ def read_from_disk(byteoffset, bsize, breader):
         m=m[3:]
         
     return(array)
+
 breader = open("/Users/shivangisingh/Desktop/InformationRetrieval/CIndex.txt",'rb')
 def readCompresssssssss(byteoffset, bsize, breader):
     breader.seek(byteoffset)
@@ -345,6 +384,7 @@ def readCompresssssssss(byteoffset, bsize, breader):
 #     print(m)
     array = DecodeByteArray(m)
     return array
+
 
 
 # output a file of (term #ofdocumentswiththatterm termfrequency) on each line and a blank line between each run
@@ -368,18 +408,16 @@ def randomSelectandCheckTermDocFrequency():
         f.write('\n')
         f.write('\n')
     f.close()
-
 randomSelectandCheckTermDocFrequency()
 
 
-# Function performs Dices Coefficient and stores 14 words in each line
 def dicewords():
     # Generating
     breader = open("/Users/shivangisingh/Desktop/InformationRetrieval/CIndex.txt",'rb')
     fresult =[]
     UClookup = readCLookUpIntoMemory()
     d = open("/Users/shivangisingh/Desktop/InformationRetrieval/Dicewords.txt", "a")
-    i=1
+#     i=1
     for iteration in seven_hundredtimes:
         for term in iteration:
 
@@ -396,13 +434,143 @@ def dicewords():
                         maxcoeff = dvalue
                         maxterm = v
             d.write(term + " " + maxterm+" ")
-            print("Term ", term, " Maxterm ",maxterm)
-    #         result.extend([term,maxterm])
-        print("iteration",i)
-        i+=1
         d.write('\n')
-    #     fresult.append(result)
-
-
+        
 dicewords()
 
+import time
+def undelta(arr):
+#     Undothe delta
+# Have to overwrite too
+    temp = arr
+    result = []
+    
+    prev_doc  = 0
+    while(len(temp)>0):
+        
+        numberofterms = temp[1]
+        positions = decode(temp[2:numberofterms+2])
+        result.append(prev_doc+temp[0])
+        result.append(numberofterms)
+        result.extend(positions)
+        prev_doc += temp[0]
+        temp = temp[numberofterms+2:]
+
+    return result
+        
+        
+def decode(decodeme):
+    prev = 0
+    for i, v in enumerate(decodeme):
+        current = v
+        decodeme[i] += prev
+        prev = current
+    return decodeme
+
+# returns an array of the top 5 docIDs
+def getTopFive( doc_term_count):
+    arr = []
+    for i in range(5):
+        docID = max(doc_term_count.iteritems(), key=operator.itemgetter(1))[0]
+        arr.append(docID)
+        try:
+            del myDict[docID]
+        except KeyError:
+            pass
+    return arr
+
+def TermatatimeLookup(arr, doc_term_count):
+    temp = arr
+    while(len(temp)>0):
+        docID = temp[0]
+        numberofterms = temp[1]
+        if docID not in doc_term_count:
+            doc_term_count[docID] = numberofterms
+        else:
+            doc_term_count[docID] += numberofterms
+    return doc_term_count
+
+
+breader = open("/Users/shivangisingh/Desktop/InformationRetrieval/CIndex.txt",'rb')
+def QueryTermsCompressed():
+    doc_term_count ={}
+    start_time = time.time()
+    ULookup = readCLookUpIntoMemory()
+#     Read the terms 
+    with open("/Users/shivangisingh/Desktop/InformationRetrieval/SevenHundredTerms.txt",'r') as f:
+        line = f.readlines()
+        line = [x.strip() for x in line] 
+#         print(lines) - array of lines
+        for linex in line :
+            QueryTerms = linex.split()
+#             Perform Document at a time Evaluation
+            for q in QueryTerms:
+#                 Retrieve Index?
+                byteoffset = ULookup[q]['offset']
+                bsize = ULookup[q]['size']
+                arr = undelta(readCompresssssssss(byteoffset, bsize, breader))
+                doc_term_count = TermatatimeLookup(arr, doc_term_count)
+#     By this time Doc Count has been updated accordingly
+#     return top 5?
+    top_five = getTopFive(doc_term_count)
+    
+    end_time = time.time()
+    return(end_time - start_time )
+
+
+print(QueryTermsCompressed())
+
+
+def QueryTermsCompressedBig():
+    doc_term_count ={}
+    start_time = time.time()
+    ULookup = readCLookUpIntoMemory()
+#     Read the terms 
+    with open("/Users/shivangisingh/Desktop/InformationRetrieval/Dicewords.txt",'r') as f:
+        line = f.readlines()
+        line = [x.strip() for x in line] 
+#         print(lines) - array of lines
+        for linex in line :
+            QueryTerms = linex.split()
+#             Perform Document at a time Evaluation
+            for q in QueryTerms:
+#                 Retrieve Index?
+                byteoffset = ULookup[q]['offset']
+                bsize = ULookup[q]['size']
+                arr = undelta(readCompresssssssss(byteoffset, bsize, breader))
+                doc_term_count = TermatatimeLookup(arr, doc_term_count)
+    top_five = getTopFive(doc_term_count)
+    print(top_five)
+    end_time = time.time()
+    
+    return(end_time - start_time )
+
+        
+
+print(QueryTermsCompressedBig())
+
+def QueryTermsUnCompressedBIG():
+    breader = open("/Users/shivangisingh/Desktop/InformationRetrieval/UCIndex.txt",'rb')
+    start_time = time.time()
+    ULookup = readUCLookUpIntoMemory()
+#     Read the terms 
+    with open("/Users/shivangisingh/Desktop/InformationRetrieval/Dicewords",'r') as f:
+        line = f.readlines()
+        line = [x.strip() for x in line] 
+#         print(lines) - array of lines
+        for linex in line :
+            QueryTerms = linex.split()
+#             Perform Document at a time Evaluation
+            for q in QueryTerms:
+#                 Retrieve Index?
+                byteoffset = ULookup[q]['offset']
+                bsize = ULookup[q]['size']
+                arr = undelta(readCompresssssssss(byteoffset, bsize, breader))
+                doc_term_count = TermatatimeLookup(arr, doc_term_count)
+    top_five = getTopFive(doc_term_count)
+    print(top_five)
+    end_time = time.time()  
+
+    return (end_time - start_time )
+
+print(QueryTermsUnCompressedBIG())
